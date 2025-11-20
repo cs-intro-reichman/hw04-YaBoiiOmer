@@ -17,7 +17,8 @@ public class Primes {
 
         for(int i = 2; i < isPrime.length; i++){
             if(!isPrime[i]) continue;
-            for(int j = Math.min(i+1, isPrime.length -1); j < isPrime.length; j++){
+            for(int j = i; j < isPrime.length; j++){
+                if(j == i) continue;
                 if(j % i == 0) isPrime[j] = false;
 
             }
