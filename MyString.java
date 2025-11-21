@@ -35,7 +35,11 @@ public class MyString {
         int loc2 = 0;
         
         for(int i = 0; i < str1.length(); i++){
-            if(loc2 == str2.length()) return true;
+            int remaining = str2.length() - loc2;
+            int available = i + remaining;
+
+            if(available > str1.length()) return false;
+            if(remaining == 0) return true;
 
             if(str1.charAt(i) == str2.charAt(loc2)){
                 loc2++;
